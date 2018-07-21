@@ -12,6 +12,10 @@ class Item
     @weight = weight
   end
 
+  def fit_in?(container_capacity)
+    @weight <= container_capacity
+  end
+
   private
 
   def validate_attributes(value, weight)
