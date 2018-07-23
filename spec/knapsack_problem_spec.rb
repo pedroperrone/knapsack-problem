@@ -9,7 +9,7 @@ RSpec.shared_examples 'matrix with the subsolutions for the problem intance' do
   end
 end
 
-RSpec.describe KnapsackProblem, :focus do
+RSpec.describe KnapsackProblem do
   let(:item_one) { Item.new(20, 1) }
   let(:item_two) { Item.new(50, 3) }
   let(:item_three) { Item.new(100, 5) }
