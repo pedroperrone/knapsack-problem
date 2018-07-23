@@ -10,10 +10,14 @@ class KnapsackProblem
     @subsolutions_matrix ||= solve
   end
 
+  def best_value
+    subsolutions_matrix.last.last
+  end
+
   private
 
   def solve
-    return [] if @items.count.zero?
+    return [[0]] if @items.count.zero?
     return [one_item_solution] if single_item?
     solve_with_multiple_items
   end
