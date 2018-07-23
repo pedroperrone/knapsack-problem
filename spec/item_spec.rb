@@ -36,4 +36,22 @@ RSpec.describe Item do
       end
     end
   end
+
+  describe 'fit_in?' do
+    let(:item) do
+      described_class.new(10, 5)
+    end
+
+    context 'item weight is smaller than the container capacity' do
+      it { expect(item.fit_in?(6)).to be_truthy }
+    end
+
+    context 'item weight is equal to the container capacity' do
+      it { expect(item.fit_in?(5)).to be_truthy }
+    end
+
+    context 'item weight is bigger than the container capacity' do
+      it { expect(item.fit_in?(4)).to be_falsey }
+    end
+  end
 end
